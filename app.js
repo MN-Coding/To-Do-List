@@ -14,7 +14,7 @@ const generateTemplate = todo => {
 
 addForm.addEventListener('submit', e => {
     e.preventDefault();
-    const todo = addForm.add.value.trim();
+    const todo = addForm.add.value.toString().trim();
     if (todo.length) {
         generateTemplate(todo);
         addForm.reset();
@@ -38,6 +38,6 @@ const filterTodos = term => {
 }
 
 search.addEventListener('keyup', () => {
-    const query = search.value.trim().toLowercase();
+    const query = search.value.trim().toString().toLowercase();
     filterTodos(query);
 });
